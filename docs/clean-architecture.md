@@ -1,5 +1,11 @@
 # **Clean Architecture in .NET – A Scalable and Maintainable Approach 🚀**
 
+> **TL;DR:** Clean Architecture separates code into 4 layers: **Domain** (entities), **Application** (business logic), **Infrastructure** (databases/APIs), and **API** (endpoints). This ensures testability, maintainability, and independence from frameworks. Organize by feature, not by file type.
+
+⏱️ *8 min read*
+
+---
+
 ## **Introduction**
 Clean Architecture is a structured approach to software design that promotes **scalability, maintainability, and separation of concerns**. By organizing code into independent layers, it ensures **modularity, testability, and flexibility**, making it ideal for **microservices and enterprise applications**.
 
@@ -144,7 +150,7 @@ This **Clean Architecture** approach ensures a well-structured, scalable, and ma
 ---
 
 ## 🚀 Stay Connected
-🔗 **Learn More:** [Your Website](https://cycolis-software.ro/home)  
+🔗 **Learn More:** [Cycolis Software](https://cycolis-software.ro)  
 💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
 💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
-🐦 **Follow for Updates:** [Twitter](https://x.com/CycolisSoftware) 
+🐦 **Follow for Updates:** [X (Twitter)](https://x.com/CycolisSoftware) 

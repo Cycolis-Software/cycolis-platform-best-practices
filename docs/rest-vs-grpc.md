@@ -1,5 +1,11 @@
 # 🌐 REST vs gRPC: Choosing the Right API Strategy 🚀
 
+> **TL;DR:** Use **REST** for public APIs and stateful resource management (CRUD). Use **gRPC** for high-performance internal microservices communication and action-driven operations. Many systems combine both for optimal results.
+
+⏱️ *7 min read*
+
+---
+
 When designing APIs, the choice between **REST and gRPC** depends on the **nature of the operations** your application performs. REST is ideal for **managing resources and enforcing system state**, while gRPC is better suited for **invoking remote functions and orchestrating actions efficiently**.  
 
 This guide provides a **practical comparison** to help you design scalable, high-performance APIs that balance **state management, efficiency, and flexibility**.  
@@ -91,7 +97,7 @@ By strategically using **REST for stateful resources** and **gRPC for high-perfo
 ---
 
 ## 🚀 Stay Connected
-🔗 **Learn More:** [Your Website](https://cycolis-software.ro/home)  
+🔗 **Learn More:** [Cycolis Software](https://cycolis-software.ro)  
 💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
 💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
-🐦 **Follow for Updates:** [Twitter](https://x.com/CycolisSoftware) 
+🐦 **Follow for Updates:** [X (Twitter)](https://x.com/CycolisSoftware) 

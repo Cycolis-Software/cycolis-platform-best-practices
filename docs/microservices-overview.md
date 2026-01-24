@@ -1,5 +1,11 @@
 # **Microservices Architecture Overview 🚀**
 
+> **TL;DR:** Microservices break applications into small, independent services that scale individually, deploy faster, and evolve independently. Trade-offs include debugging complexity and eventual consistency challenges. Use API gateways, observability tools, and Domain-Driven Design for success.
+
+⏱️ *5 min read*
+
+---
+
 ## **What is Microservices Architecture?**
 Microservices is an architectural approach where applications are built as a collection of **small, independent services** that communicate via APIs or event-driven messaging. Each service is responsible for a **specific business capability**, making the system **scalable, maintainable, and resilient**.
 
@@ -56,7 +62,7 @@ Microservices provide **scalability, independent deployments, and modular archit
 ---
 
 ## 🚀 Stay Connected
-🔗 **Learn More:** [Your Website](https://cycolis-software.ro/home)  
+🔗 **Learn More:** [Cycolis Software](https://cycolis-software.ro)  
 💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
 💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
-🐦 **Follow for Updates:** [Twitter](https://x.com/CycolisSoftware) 
+🐦 **Follow for Updates:** [X (Twitter)](https://x.com/CycolisSoftware) 
