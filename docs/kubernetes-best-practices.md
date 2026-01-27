@@ -276,4 +276,4 @@ resource "kubernetes_deployment" "redis" {
 🔗 **Learn More:** [Cycolis Software](https://cycolis-software.com/home)  
 💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
 💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
-🐦 **Follow for Updates:** [Twitter](https://x.com/CycolisSoftware)
+🐦 **Follow for Updates:** [X (Twitter)](https://x.com/CycolisSoftware)
