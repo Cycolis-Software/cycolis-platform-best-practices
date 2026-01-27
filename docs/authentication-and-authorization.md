@@ -1,5 +1,9 @@
 # **🔐 Implementing Secure Architecture**
 
+> **TL;DR:** Secure your APIs with API keys for system-to-system auth, JWTs (15-min expiry) for user auth, and refresh tokens (7-14 days) for seamless session renewal. Always use HTTPS and rotate tokens. | ⏱️ 4 min read
+
+---
+
 In modern software development, security is a foundational aspect of system design. A secure architecture ensures that sensitive data is protected, access is properly managed, and the overall system is resilient against unauthorized access and misuse. Below, we outline a practical approach to implementing a secure architecture using **API keys**, **JWT tokens**, and **refresh tokens**.
 
 ---
@@ -38,13 +42,16 @@ JWTs (**JSON Web Tokens**) are widely used for **stateless authentication and au
 
 2. **Claims**  
    - Include **user roles, permissions, and metadata** in the token payload.
-Example claims:
-{
-  "sub": "1234567890",
-  "role": "Admin",
-  "email": "user@example.com",
-  "exp": 1712345678
-}
+
+   Example claims:
+   ```json
+   {
+     "sub": "1234567890",
+     "role": "Admin",
+     "email": "user@example.com",
+     "exp": 1712345678
+   }
+   ```
 
 3. **Expiration**  
    - Set a short lifespan for JWT tokens to reduce risks (e.g., 15 minutes).
@@ -107,8 +114,9 @@ By combining **API keys** for system-level security and **JWT tokens with refres
 
 ---
 
-## 🚀 Stay Connected
-🔗 **Learn More:** [Your Website](https://cycolis-software.ro/home)  
+## **🚀 Stay Connected**
+
+🔗 **Learn More:** [Cycolis Software](https://cycolis-software.ro/home)  
 💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
 💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
-🐦 **Follow for Updates:** [Twitter](https://x.com/CycolisSoftware) 
+🐦 **Follow for Updates:** [Twitter](https://x.com/CycolisSoftware)

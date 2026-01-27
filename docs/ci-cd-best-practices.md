@@ -1,4 +1,8 @@
-# CI/CD Pipelines for Microservices Deployment
+# **CI/CD Pipelines for Microservices Deployment**
+
+> **TL;DR:** Use GitHub Actions for build/test pipelines and Terraform for infrastructure deployment. Version artifacts, automate rollbacks, and run health checks post-deploy. | ⏱️ 6 min read
+
+---
 
 In this document, we outline the CI/CD pipelines designed for efficient, reliable, and automated deployment of microservices. The setup leverages modern DevOps tools and practices to ensure smooth integration and delivery workflows.
 
@@ -73,6 +77,8 @@ This pipeline is responsible for deploying all microservices to the staging or p
 ## **📂 Example Placeholders**
 
 ### **Build Pipeline Example**
+
+```yaml
 # build-pipeline.yml
 name: Build and Test Pipeline
 
@@ -88,12 +94,12 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '7.0.x'
+        dotnet-version: '9.0.x'
 
     - name: Restore dependencies
       run: dotnet restore
@@ -108,13 +114,17 @@ jobs:
       run: |
         dotnet publish -c Release -o ./publish
         zip -r artifact.zip ./publish
+
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: application-artifact
         path: artifact.zip
+```
 
 ### **Deploy Pipeline Example**
+
+```yaml
 # deploy-pipeline.yml
 name: Deploy Services Pipeline
 
@@ -127,17 +137,17 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Download artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: application-artifact
 
     - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v2
+      uses: hashicorp/setup-terraform@v3
       with:
-        terraform_version: 1.5.0
+        terraform_version: 1.10.0
 
     - name: Terraform Init
       run: terraform init
@@ -155,9 +165,12 @@ jobs:
 
     - name: Post-Deployment Tests
       run: curl -f http://my-microservice/health || exit 1
+```
 
 
 ### **Terraform Deployment Example**
+
+```hcl
 # main.tf
 provider "kubernetes" {
   config_path = "~/.kube/config"
@@ -208,7 +221,7 @@ resource "kubernetes_deployment" "my_microservice" {
           image = "my-microservice:${var.image_tag}"
           name  = "my-microservice"
 
-          ports {
+          port {
             container_port = 8080
           }
         }
@@ -216,6 +229,7 @@ resource "kubernetes_deployment" "my_microservice" {
     }
   }
 }
+```
 
 ---
 
@@ -223,8 +237,9 @@ These pipelines ensure that your microservices are built, tested, and deployed r
 
 ---
 
-## 🚀 Stay Connected
-🔗 **Learn More:** [Your Website](https://cycolis-software.ro/home)  
+## **🚀 Stay Connected**
+
+🔗 **Learn More:** [Cycolis Software](https://cycolis-software.ro/home)  
 💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
 💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
-🐦 **Follow for Updates:** [Twitter](https://x.com/CycolisSoftware) 
+🐦 **Follow for Updates:** [Twitter](https://x.com/CycolisSoftware)

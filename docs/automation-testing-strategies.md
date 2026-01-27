@@ -1,6 +1,10 @@
-# 🧪 Testing Strategy for Clean Architecture
+# **🧪 Testing Strategy for Clean Architecture**
 
-This document outlines the testing strategy for our clean architecture project, focusing on **unit tests** for business logic and **integration tests** for end-to-end API validation.
+> **TL;DR:** Unit tests (xUnit + Moq) validate business logic in isolation using AAA pattern. Integration tests use Refit for real API calls and WireMock for external dependencies—no mocking internals. | ⏱️ 5 min read
+
+---
+
+This document outlines the testing strategy for clean architecture projects, focusing on **unit tests** for business logic and **integration tests** for end-to-end API validation.
 
 ---
 
@@ -21,6 +25,7 @@ Unit tests validate the **business logic** within the `Application` layer, ensur
     MethodName_Condition_ExpectedResult
     ```
 
+```csharp
 // Arrange, Act, Assert pattern
 // Naming: MethodName_Condition_ExpectedResult
 
@@ -40,6 +45,7 @@ public void CalculateOrderTotal_ValidInput_ReturnsCorrectTotal()
     // Assert
     Assert.Equal(20, result);
 }
+```
 
 ---
 
@@ -62,6 +68,7 @@ Integration tests validate the **entire system flow**, treating the API as a rea
 3. **WireMock for External Systems**:  
    A separate `WireMock` project is used to simulate external dependencies.
 
+```csharp
 // BusinessPattern_UserAction_ExpectedResult
 
 [Fact]
@@ -70,7 +77,7 @@ public async Task PlaceOrder_ValidRequest_ReturnsSuccessResponse()
     // Arrange
     var client = new HttpClient
     {
-        BaseAddress = new Uri("http://localhost:5000") // Replace with actual API URL
+        BaseAddress = new Uri("http://localhost:5000")
     };
     var orderRequest = new
     {
@@ -86,6 +93,7 @@ public async Task PlaceOrder_ValidRequest_ReturnsSuccessResponse()
     var responseData = await response.Content.ReadAsStringAsync();
     Assert.Contains("OrderId", responseData);
 }
+```
 
 ---
 
@@ -98,6 +106,7 @@ WireMock is used to simulate external dependencies, ensuring integration tests f
 1. Define expected requests and responses for each external system.
 2. Simulate delays or failures to test edge cases.
 
+```csharp
 // Configure WireMock server to simulate external dependency
 using WireMock.Server;
 using WireMock.RequestBuilders;
@@ -109,7 +118,7 @@ public class WireMockSetup : IDisposable
 
     public WireMockSetup()
     {
-        _server = WireMockServer.Start(9091); // Replace with the desired port
+        _server = WireMockServer.Start(9091);
 
         _server
             .Given(Request.Create()
@@ -126,6 +135,7 @@ public class WireMockSetup : IDisposable
         _server.Dispose();
     }
 }
+```
 
 ---
 
@@ -148,12 +158,13 @@ public class WireMockSetup : IDisposable
 ---
 
 ## **General Guidelines**
+
 1. **Testing Levels**: Focus primarily on the `Application` and `API` layers, as other layers are indirectly validated through integration tests.
 2. **Tools**:
- - xUnit for test execution.
- - Moq for mocking dependencies in unit tests.
- - WireMock for simulating external systems in integration tests.
- - Refit for API communication during integration tests.
+   - xUnit for test execution.
+   - Moq for mocking dependencies in unit tests.
+   - WireMock for simulating external systems in integration tests.
+   - Refit for API communication during integration tests.
 3. **Automation**: Ensure all tests are part of the CI/CD pipeline for consistent quality across deployments.
 
 ---
@@ -162,8 +173,9 @@ This approach ensures robust validation of both individual components and the en
 
 ---
 
-## 🚀 Stay Connected
-🔗 **Learn More:** [Your Website](https://cycolis-software.ro/home)  
+## **🚀 Stay Connected**
+
+🔗 **Learn More:** [Cycolis Software](https://cycolis-software.ro/home)  
 💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
 💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
-🐦 **Follow for Updates:** [Twitter](https://x.com/CycolisSoftware) 
+🐦 **Follow for Updates:** [Twitter](https://x.com/CycolisSoftware)

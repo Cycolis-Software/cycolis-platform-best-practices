@@ -1,5 +1,9 @@
 # **🔐 Implementing Secure Single Sign-On (SSO) for Multi-Tenant Microservices**
 
+> **TL;DR:** Centralize authentication in one SSO service that issues JWTs with tenant claims. Microservices only validate tokens; micro-apps enforce their own authorization using roles/permissions from the token. | ⏱️ 4 min read
+
+---
+
 Security is a critical component of modern applications, especially when dealing with **multi-tenant architectures** and **micro-applications**. A well-designed **Single Sign-On (SSO) strategy** ensures **centralized authentication**, **token validation**, and **role-based authorization** while allowing independent micro-apps to enforce their own access control policies.
 
 ---
@@ -87,21 +91,26 @@ Security is a critical component of modern applications, especially when dealing
 
 ---
 
-## **📂 Example Token Structure (Placeholder)**
+## **📂 Example Token Structure**
+
+```json
+// Header
 {
-  "alg": "HS256",
+  "alg": "RS256",
   "typ": "JWT"
 }
+// Payload
 {
-  "sub": "1234567890",  // User ID
-  "tenantId": "tenant-xyz",  // Multi-Tenant Identifier
-  "roles": ["Admin", "Finance"],  // User Roles
-  "permissions": ["read:reports", "write:invoices"],  // Fine-Grained Permissions
-  "iat": 1712345678,  // Issued At Timestamp
-  "exp": 1712355678,  // Expiration Timestamp
-  "iss": "auth.mycompany.com",  // JWT Issuer (SSO Service)
-  "aud": "my-microservices"  // Audience (Microservices using this token)
+  "sub": "1234567890",
+  "tenantId": "tenant-xyz",
+  "roles": ["Admin", "Finance"],
+  "permissions": ["read:reports", "write:invoices"],
+  "iat": 1712345678,
+  "exp": 1712355678,
+  "iss": "auth.mycompany.com",
+  "aud": "my-microservices"
 }
+```
 
 ---
 
@@ -117,8 +126,9 @@ By implementing this **SSO-driven secure architecture**, you ensure that authent
 
 ---
 
-## 🚀 Stay Connected
-🔗 **Learn More:** [Your Website](https://cycolis-software.ro/home)  
+## **🚀 Stay Connected**
+
+🔗 **Learn More:** [Cycolis Software](https://cycolis-software.ro/home)  
 💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
 💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
-🐦 **Follow for Updates:** [Twitter](https://x.com/CycolisSoftware) 
+🐦 **Follow for Updates:** [Twitter](https://x.com/CycolisSoftware)
