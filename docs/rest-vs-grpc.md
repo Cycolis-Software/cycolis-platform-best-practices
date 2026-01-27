@@ -97,7 +97,7 @@ By strategically using **REST for stateful resources** and **gRPC for high-perfo
 ---
 
 ## 🚀 Stay Connected
-🔗 **Learn More:** [Cycolis Software](https://cycolis-software.ro)  
+🔗 **Learn More:** [Cycolis Software](https://cycolis-software.com)  
 💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
 💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
 🐦 **Follow for Updates:** [X (Twitter)](https://x.com/CycolisSoftware) 
