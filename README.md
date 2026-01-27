@@ -31,7 +31,7 @@ This repository serves as a **knowledge hub** for building **scalable, secure, a
 ---
 
 ## 🚀 Stay Connected
-🔗 **Learn More:** [Your Website](https://cycolis-software.com/home)  
+🔗 **Learn More:** [Cycolis Software](https://cycolis-software.com/home)  
 💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
 💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
-🐦 **Follow for Updates:** [Twitter](https://x.com/CycolisSoftware) 
+🐦 **Follow for Updates:** [X (Twitter)](https://x.com/CycolisSoftware) 
