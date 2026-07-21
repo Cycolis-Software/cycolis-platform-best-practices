@@ -1,0 +1,84 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# =============================================================================
+# LF line endings (Unix/Linux compatibility)
+# =============================================================================
+
+# Shell scripts
+*.sh text eol=lf
+*.bash text eol=lf
+
+# YAML/YML files (GitHub Actions, CI configs)
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Docker files
+Dockerfile text eol=lf
+docker-compose*.yml text eol=lf
+.dockerignore text eol=lf
+
+# Config files
+.gitattributes text eol=lf
+.gitignore text eol=lf
+.editorconfig text eol=lf
+.env text eol=lf
+Makefile text eol=lf
+
+# Markdown & docs
+*.md text eol=lf
+*.txt text eol=lf
+
+# Data / config
+*.json text eol=lf
+*.xml text eol=lf
+*.sql text eol=lf
+
+# IaC (Terraform)
+*.tf text eol=lf
+*.tfvars text eol=lf
+
+# .NET source & project files
+*.cs text eol=lf
+*.csproj text eol=lf
+*.sln text eol=lf
+*.xaml text eol=lf
+*.props text eol=lf
+*.targets text eol=lf
+*.config text eol=lf
+
+# Web / TypeScript / JavaScript / styling
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.html text eol=lf
+
+# =============================================================================
+# CRLF line endings (Windows)
+# =============================================================================
+
+# Windows batch files
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# PowerShell scripts (LF — PowerShell handles both LF and CRLF on all platforms)
+*.ps1 text eol=lf
+
+# =============================================================================
+# Binary files (no conversion)
+# =============================================================================
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.tar.gz binary
+*.exe binary
+*.dll binary
+*.vsix binary
