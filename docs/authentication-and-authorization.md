@@ -13,19 +13,19 @@ In modern software development, security is a foundational aspect of system desi
 API keys are used to authenticate **system-to-system communication** or grant limited access to certain resources.
 
 ### **How API Keys Work**
-1. **Generation**  
+1. **Generation**
    - Generate unique API keys for each client or service.
    - Use a secure random generator to avoid predictability.
 
-2. **Storage**  
+2. **Storage**
    - Store API keys securely in a database with hashing (e.g., SHA-256).
    - Never store API keys in plaintext.
 
-3. **Validation**  
+3. **Validation**
    - Validate API keys on every request.
    - Include rate limiting and IP whitelisting as optional security layers.
 
-4. **Rotation**  
+4. **Rotation**
    - Allow clients to rotate API keys periodically.
    - Invalidate old keys after a defined expiration period.
 
@@ -36,11 +36,11 @@ API keys are used to authenticate **system-to-system communication** or grant li
 JWTs (**JSON Web Tokens**) are widely used for **stateless authentication and authorization**. JWTs carry encoded claims that define **user permissions and roles**.
 
 ### **How JWT Tokens Work**
-1. **Structure**  
+1. **Structure**
    - JWT consists of three parts: **Header, Payload, and Signature**.
    - Example format: `eyJhbGci...Header.Payload.Signature`.
 
-2. **Claims**  
+2. **Claims**
    - Include **user roles, permissions, and metadata** in the token payload.
 
    Example claims:
@@ -53,15 +53,15 @@ JWTs (**JSON Web Tokens**) are widely used for **stateless authentication and au
    }
    ```
 
-3. **Expiration**  
+3. **Expiration**
    - Set a short lifespan for JWT tokens to reduce risks (e.g., 15 minutes).
    - Use the **exp** (expiration time) claim to define token validity.
 
-4. **Signing**  
+4. **Signing**
    - Sign tokens using a **secret key** or a **private key** (for asymmetric signing).
    - Verify signatures on every request to ensure authenticity.
 
-5. **Secure Transmission**  
+5. **Secure Transmission**
    - Use **HTTPS** to prevent token interception during transmission.
    - Avoid exposing sensitive data in the token payload.
 
@@ -72,19 +72,19 @@ JWTs (**JSON Web Tokens**) are widely used for **stateless authentication and au
 Refresh tokens complement JWTs by allowing clients to **obtain new JWTs** without requiring re-authentication.
 
 ### **How Refresh Tokens Work**
-1. **Longer Expiration**  
+1. **Longer Expiration**
    - Refresh tokens have a longer lifespan than JWTs (e.g., 7–14 days).
    - They are used to renew JWTs when they expire.
 
-2. **Secure Storage**  
+2. **Secure Storage**
    - Store refresh tokens securely on the client side, such as in a **secure cookie** or **encrypted local storage**.
    - Never expose refresh tokens to third parties.
 
-3. **Rotation**  
+3. **Rotation**
    - Implement **refresh token rotation**, where a new refresh token is issued with every renewal.
    - Invalidate old refresh tokens upon successful renewal.
 
-4. **Reauthentication**  
+4. **Reauthentication**
    - If both the **JWT** and **refresh token** expire, require **full reauthentication** to obtain new tokens.
 
 ---
@@ -116,7 +116,7 @@ By combining **API keys** for system-level security and **JWT tokens with refres
 
 ## **🚀 Stay Connected**
 
-🔗 **Learn More:** [Cycolis Software](https://cycolis-software.com/home)  
-💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
-💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
+🔗 **Learn More:** [Cycolis Software](https://cycolis-software.com/home)
+💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)
+💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)
 🐦 **Follow for Updates:** [X (Twitter)](https://x.com/CycolisSoftware)

@@ -6,9 +6,9 @@
 
 ---
 
-When designing APIs, the choice between **REST and gRPC** depends on the **nature of the operations** your application performs. REST is ideal for **managing resources and enforcing system state**, while gRPC is better suited for **invoking remote functions and orchestrating actions efficiently**.  
+When designing APIs, the choice between **REST and gRPC** depends on the **nature of the operations** your application performs. REST is ideal for **managing resources and enforcing system state**, while gRPC is better suited for **invoking remote functions and orchestrating actions efficiently**.
 
-This guide provides a **practical comparison** to help you design scalable, high-performance APIs that balance **state management, efficiency, and flexibility**.  
+This guide provides a **practical comparison** to help you design scalable, high-performance APIs that balance **state management, efficiency, and flexibility**.
 
 ---
 
@@ -30,14 +30,14 @@ This guide provides a **practical comparison** to help you design scalable, high
 ### **REST is best when the API is responsible for managing the state of resources.**
 RESTful APIs are structured around **resources** and their representations. The **backend takes care of state transitions**, so the client **only specifies the desired state**, without worrying about how it's achieved.
 
-✅ **Best for:**  
-- **CRUD operations** (Create, Read, Update, Delete) on **resources** (e.g., users, orders, products).  
-- **Public APIs & frontend-backend communication**, where JSON is the standard format.  
-- When the client **should not worry about orchestration** and expects the backend to return the **final state** of a resource.  
+✅ **Best for:**
+- **CRUD operations** (Create, Read, Update, Delete) on **resources** (e.g., users, orders, products).
+- **Public APIs & frontend-backend communication**, where JSON is the standard format.
+- When the client **should not worry about orchestration** and expects the backend to return the **final state** of a resource.
 
-❌ **Avoid REST if:**  
-- Your API needs **high-performance, real-time communication**.  
-- The API is **action-driven** rather than resource-driven.  
+❌ **Avoid REST if:**
+- Your API needs **high-performance, real-time communication**.
+- The API is **action-driven** rather than resource-driven.
 
 ---
 
@@ -45,29 +45,29 @@ RESTful APIs are structured around **resources** and their representations. The 
 ### **gRPC is best when the client needs to orchestrate multiple actions.**
 gRPC follows a **Remote Procedure Call (RPC) model**, where **function calls** are executed on remote services. The client **can handle orchestration**, invoking multiple services to achieve the desired outcome.
 
-✅ **Best for:**  
-- **Internal microservices communication**, where efficiency and speed are critical.  
-- **Action-driven operations** (e.g., triggering a workflow, initiating transactions).  
-- **Real-time and streaming scenarios**, where persistent connections offer better performance.  
-- **Polyglot architectures**, where multiple languages interact with the same service via Protobuf.  
+✅ **Best for:**
+- **Internal microservices communication**, where efficiency and speed are critical.
+- **Action-driven operations** (e.g., triggering a workflow, initiating transactions).
+- **Real-time and streaming scenarios**, where persistent connections offer better performance.
+- **Polyglot architectures**, where multiple languages interact with the same service via Protobuf.
 
-❌ **Avoid gRPC if:**  
-- The API is **exposed to browsers** (most browsers do not support gRPC natively).  
-- You are building **a RESTful resource-based API** for external integrations.  
+❌ **Avoid gRPC if:**
+- The API is **exposed to browsers** (most browsers do not support gRPC natively).
+- You are building **a RESTful resource-based API** for external integrations.
 
 ---
 
 ## **🔄 Hybrid Approach: Using REST for State & gRPC for Actions**
 Many modern systems **combine REST and gRPC** to get the best of both worlds.
 
-✔ **Use REST for:**  
-   - **Public APIs & frontend communication.**  
-   - **Managing stateful resources (users, products, orders, payments).**  
+✔ **Use REST for:**
+   - **Public APIs & frontend communication.**
+   - **Managing stateful resources (users, products, orders, payments).**
 
-✔ **Use gRPC for:**  
-   - **Backend microservices communication.**  
-   - **Action-driven operations that require efficiency and low latency.**  
-   - **Streaming scenarios (e.g., real-time analytics, chat systems, event-driven workflows).**  
+✔ **Use gRPC for:**
+   - **Backend microservices communication.**
+   - **Action-driven operations that require efficiency and low latency.**
+   - **Streaming scenarios (e.g., real-time analytics, chat systems, event-driven workflows).**
 
 ### **Example API Strategy**
 | Operation | REST or gRPC? | Justification |
@@ -80,14 +80,14 @@ Many modern systems **combine REST and gRPC** to get the best of both worlds.
 ---
 
 ## **🛠 Tech Stack & Best Practices**
-- **REST:** OpenAPI (Swagger), Postman, JSON Web Tokens (JWT)  
-- **gRPC:** Protobuf, gRPC Gateway (to expose gRPC as REST if needed), mTLS for security  
+- **REST:** OpenAPI (Swagger), Postman, JSON Web Tokens (JWT)
+- **gRPC:** Protobuf, gRPC Gateway (to expose gRPC as REST if needed), mTLS for security
 
 ### **Final Decision Guide**
-✔ **If the API is managing a resource and ensuring state consistency** → ✅ Use **REST**  
-✔ **If the API is orchestrating actions that require efficiency** → ✅ Use **gRPC**  
-✔ **If the API requires high-speed internal microservice communication** → ✅ Use **gRPC**  
-✔ **If the API is public-facing and needs broad compatibility** → ✅ Use **REST**  
+✔ **If the API is managing a resource and ensuring state consistency** → ✅ Use **REST**
+✔ **If the API is orchestrating actions that require efficiency** → ✅ Use **gRPC**
+✔ **If the API requires high-speed internal microservice communication** → ✅ Use **gRPC**
+✔ **If the API is public-facing and needs broad compatibility** → ✅ Use **REST**
 
 ---
 
@@ -97,7 +97,7 @@ By strategically using **REST for stateful resources** and **gRPC for high-perfo
 ---
 
 ## 🚀 Stay Connected
-🔗 **Learn More:** [Cycolis Software](https://cycolis-software.com)  
-💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
-💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
-🐦 **Follow for Updates:** [X (Twitter)](https://x.com/CycolisSoftware) 
+🔗 **Learn More:** [Cycolis Software](https://cycolis-software.com)
+💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)
+💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)
+🐦 **Follow for Updates:** [X (Twitter)](https://x.com/CycolisSoftware)

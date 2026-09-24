@@ -11,21 +11,21 @@ Security is a critical component of modern applications, especially when dealing
 ## **🌍 Multi-Tenancy in Authentication**
 
 ### **How Multi-Tenant Authentication Works**
-1. **Centralized Authentication Service**  
+1. **Centralized Authentication Service**
    - A **single authentication service** generates **JWT tokens** for all applications.
    - The token includes **tenant-specific claims** to differentiate user access across different clients.
 
-2. **Token Issuer Consistency**  
+2. **Token Issuer Consistency**
    - The authentication service acts as the **single issuer** of all tokens.
    - Each micro-app validates tokens issued by the authentication service.
 
-3. **Tenant-Based Claims**  
+3. **Tenant-Based Claims**
    - The **JWT payload** contains claims such as:
      - `tenantId`: Identifies the organization or client the user belongs to.
      - `roles`: Specifies the user’s role within the tenant.
      - `permissions`: Defines fine-grained access rules.
 
-4. **Dynamic Authorization**  
+4. **Dynamic Authorization**
    - Microservices validate the `tenantId` claim to restrict data access.
    - Authorization policies are dynamically applied based on `roles` and `permissions`.
 
@@ -128,7 +128,7 @@ By implementing this **SSO-driven secure architecture**, you ensure that authent
 
 ## **🚀 Stay Connected**
 
-🔗 **Learn More:** [Cycolis Software](https://cycolis-software.com/home)  
-💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
-💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
+🔗 **Learn More:** [Cycolis Software](https://cycolis-software.com/home)
+💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)
+💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)
 🐦 **Follow for Updates:** [X (Twitter)](https://x.com/CycolisSoftware)

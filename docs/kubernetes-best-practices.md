@@ -14,10 +14,10 @@ Kubernetes (K8s) is the industry standard for **container orchestration**, allow
 
 In a **staging environment**, a **single-node Kubernetes cluster** managed with **kubectl** can host:
 
-- **Core Services**: Redis, RabbitMQ, Elasticsearch, SQL Server  
-- **Monitoring Stack**: ELK (Elasticsearch, Logstash, Kibana)  
-- **Infrastructure as Code (IaC)**: Managed using **Terraform**  
-- **Microservices**: Independent services interacting with these shared resources  
+- **Core Services**: Redis, RabbitMQ, Elasticsearch, SQL Server
+- **Monitoring Stack**: ELK (Elasticsearch, Logstash, Kibana)
+- **Infrastructure as Code (IaC)**: Managed using **Terraform**
+- **Microservices**: Independent services interacting with these shared resources
 
 📌 **Deployment Strategy**: Each microservice runs as a **Kubernetes Deployment**, with independent scaling capabilities.
 
@@ -53,7 +53,7 @@ spec:
         - containerPort: 6379
 ```
 
-✅ **Persistent Storage:**  
+✅ **Persistent Storage:**
 For persistent caching, use a **Redis StatefulSet** instead of Deployment.
 
 ---
@@ -85,7 +85,7 @@ spec:
         - containerPort: 15672  # Management UI
 ```
 
-✅ **Scaling Consideration:**  
+✅ **Scaling Consideration:**
 For **high availability**, RabbitMQ should be **clustered across multiple nodes**.
 
 ---
@@ -124,10 +124,10 @@ spec:
         - containerPort: 1433
 ```
 
-✅ **Data Persistence:**  
+✅ **Data Persistence:**
 Mount a **Persistent Volume Claim (PVC)** to prevent data loss.
 
-⚠️ **Security Note:**  
+⚠️ **Security Note:**
 Never hardcode passwords—use Kubernetes Secrets as shown above.
 
 ---
@@ -163,21 +163,21 @@ spec:
         - containerPort: 9200
 ```
 
-✅ **Security Note:**  
+✅ **Security Note:**
 Use **x-pack security** to secure Elasticsearch deployments in production.
 
 ---
 
 ## **📊 Monitoring with ELK**
 
-**Stack Overview:**  
-- **Elasticsearch**: Stores logs.  
-- **Logstash**: Parses & transforms logs.  
+**Stack Overview:**
+- **Elasticsearch**: Stores logs.
+- **Logstash**: Parses & transforms logs.
 - **Kibana**: Visualizes logs.
 
-**Why ELK?**  
-- Tracks **microservices logs** across Kubernetes pods.  
-- Detects **failures & anomalies** in real time.  
+**Why ELK?**
+- Tracks **microservices logs** across Kubernetes pods.
+- Detects **failures & anomalies** in real time.
 - Provides **insights into performance bottlenecks**.
 
 ```yaml
@@ -209,20 +209,20 @@ spec:
 
 ## **🔧 Integration Testing with WireMock**
 
-**Simulating External Dependencies:**  
+**Simulating External Dependencies:**
 For integration testing, use **WireMock** to simulate external services like RabbitMQ, Redis, SQL Server.
 
-✅ **Benefits of WireMock:**  
-- Eliminates dependency on real systems.  
-- Provides **mock responses** for APIs or events.  
+✅ **Benefits of WireMock:**
+- Eliminates dependency on real systems.
+- Provides **mock responses** for APIs or events.
 - Enables **fast, isolated testing** without infrastructure costs.
 
 ---
 
 ## **📜 Infrastructure as Code with Terraform**
 
-**Why Terraform?**  
-- Manages Kubernetes infrastructure declaratively.  
+**Why Terraform?**
+- Manages Kubernetes infrastructure declaratively.
 - Enables consistent environments across **staging** and **production**.
 
 ```hcl
@@ -273,7 +273,7 @@ resource "kubernetes_deployment" "redis" {
 
 ## **🚀 Stay Connected**
 
-🔗 **Learn More:** [Cycolis Software](https://cycolis-software.com/home)  
-💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
-💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
+🔗 **Learn More:** [Cycolis Software](https://cycolis-software.com/home)
+💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)
+💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)
 🐦 **Follow for Updates:** [X (Twitter)](https://x.com/CycolisSoftware)

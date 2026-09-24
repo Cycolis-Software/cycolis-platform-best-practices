@@ -48,11 +48,11 @@ Microservices is an architectural approach where applications are built as a col
 ---
 
 ## **🛠 Best Practices for Microservices Architecture**
-✔ **Use API Gateway & Service Mesh** for traffic control and security.  
-✔ **Implement Observability** (logs, traces, metrics) to track requests across services.  
-✔ **Follow Domain-Driven Design (DDD)** to structure microservices logically.  
-✔ **Use Asynchronous Messaging Wisely** – Only where decoupling is necessary.  
-✔ **Minimize Shared Code** – Microservices should evolve independently.  
+✔ **Use API Gateway & Service Mesh** for traffic control and security.
+✔ **Implement Observability** (logs, traces, metrics) to track requests across services.
+✔ **Follow Domain-Driven Design (DDD)** to structure microservices logically.
+✔ **Use Asynchronous Messaging Wisely** – Only where decoupling is necessary.
+✔ **Minimize Shared Code** – Microservices should evolve independently.
 
 ---
 
@@ -62,7 +62,7 @@ Microservices provide **scalability, independent deployments, and modular archit
 ---
 
 ## 🚀 Stay Connected
-🔗 **Learn More:** [Cycolis Software](https://cycolis-software.com)  
-💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
-💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
-🐦 **Follow for Updates:** [X (Twitter)](https://x.com/CycolisSoftware) 
+🔗 **Learn More:** [Cycolis Software](https://cycolis-software.com)
+💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)
+💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)
+🐦 **Follow for Updates:** [X (Twitter)](https://x.com/CycolisSoftware)
