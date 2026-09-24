@@ -1,0 +1,61 @@
+# =============================================================================
+# Release Workflow - Tag + GitHub Release on Merge to Main
+# =============================================================================
+# Runs when a merge to main changes VERSION: creates tag v<VERSION> and a
+# GitHub release with auto-generated notes (these are the changelog — no
+# changelog commit, so no PAT is needed to get past branch protection).
+#
+# Self-contained on purpose: this repository is PUBLIC and
+# cycolis-platform-devops is PRIVATE, and GitHub never lets a public repository
+# call reusable workflows from a private one. Uses GITHUB_TOKEN only.
+# =============================================================================
+
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "VERSION"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create tag and GitHub release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          version=$(tr -d '[:space:]' < VERSION)
+          if [[ ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error file=VERSION::'$version' is not X.Y.Z"
+            exit 1
+          fi
+          tag="v${version}"
+          if git ls-remote --exit-code --tags origin "refs/tags/${tag}" >/dev/null; then
+            echo "::notice::${tag} already exists — nothing to release"
+            exit 0
+          fi
+          gh release create "$tag" --target "$GITHUB_SHA" --title "$tag" --generate-notes
+          {
+            echo "## Release ${tag}"
+            echo ""
+            echo "Commit: \`${GITHUB_SHA}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
