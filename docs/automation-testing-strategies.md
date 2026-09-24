@@ -20,7 +20,7 @@ Unit tests validate the **business logic** within the `Application` layer, ensur
 - **Key Practices**:
   - Mock all dependencies of the classes under test.
   - Follow the **AAA (Arrange, Act, Assert)** pattern for writing tests.
-  - Use the naming convention:  
+  - Use the naming convention:
     ```
     MethodName_Condition_ExpectedResult
     ```
@@ -61,11 +61,11 @@ Integration tests validate the **entire system flow**, treating the API as a rea
 - **External Dependencies**: WireMock
 
 ### **Key Practices**
-1. **No Mocking of API Components**:  
+1. **No Mocking of API Components**:
    The API’s internal behavior (e.g., authorization, database) is not mocked.
-2. **End-to-End Simulation**:  
+2. **End-to-End Simulation**:
    Tests mimic a real client application, using Refit to call API endpoints.
-3. **WireMock for External Systems**:  
+3. **WireMock for External Systems**:
    A separate `WireMock` project is used to simulate external dependencies.
 
 ```csharp
@@ -145,14 +145,14 @@ public class WireMockSetup : IDisposable
 - **Focus**: Isolated business logic
 - **Mock Dependencies**: Yes
 - **Frameworks**: xUnit, Moq
-- **Naming Convention**:  
+- **Naming Convention**:
 `MethodName_Condition_ExpectedResult`
 
 ### **Integration Tests**
 - **Focus**: End-to-end API validation
 - **Mock Dependencies**: No (except for external systems via WireMock)
 - **Frameworks**: xUnit, Refit, WireMock
-- **Naming Convention**:  
+- **Naming Convention**:
 `BusinessPattern_UserAction_ExpectedResult`
 
 ---
@@ -175,7 +175,7 @@ This approach ensures robust validation of both individual components and the en
 
 ## **🚀 Stay Connected**
 
-🔗 **Learn More:** [Cycolis Software](https://cycolis-software.com/home)  
-💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)  
-💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)  
+🔗 **Learn More:** [Cycolis Software](https://cycolis-software.com/home)
+💻 **Explore Our Work:** [GitHub](https://github.com/Cycolis-Software)
+💼 **Connect on LinkedIn:** [LinkedIn](https://www.linkedin.com/company/cycolis-software)
 🐦 **Follow for Updates:** [X (Twitter)](https://x.com/CycolisSoftware)
